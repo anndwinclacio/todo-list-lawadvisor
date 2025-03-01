@@ -1,0 +1,20 @@
+<form {{on "submit" this.saveTask}} class="form">
+  <div class="form-card">
+    <h2>{{if @task "Edit Task" "Create Task"}}</h2>
+
+    <div class="field-group">
+      <label for="title">Title:</label>
+      <input id="title" type="text" value={{this.title}} {{on "input" this.updateTitle}} required/>
+    </div>
+
+    <div class="field-group">
+      <label for="description">Description:</label>
+      <textarea id="description" rows="8" value={{this.description}} {{on "input" this.updateDescription}}></textarea>
+    </div>
+
+    <div class="button-group">
+      <button type="submit">{{if @task "Update Task" "Create Task"}}</button>
+      <button type="button" class="cancel" {{on "click" this.cancel}}>Cancel</button>
+    </div>
+  </div>
+</form>

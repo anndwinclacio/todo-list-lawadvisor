@@ -1,0 +1,23 @@
+<div class="task-list">
+  <h1>To Do List</h1>
+
+  {{#each this.tasks as |task index|}}
+    <div class="task-card" draggable="true"
+         {{on "dragstart" (fn this.startDrag index)}}
+         {{on "dragover" this.allowDrop}}
+         {{on "drop" (fn this.drop index)}}>
+      <div class="task-content">
+        <h3>{{task.title}}</h3>
+        <p>{{task.description}}</p>
+      </div>
+      <div class="task-actions">
+        <button class="edit-task" {{on "click" (fn this.editTask task)}}>Edit</button>
+        <button class="delete-task" {{on "click" (fn this.deleteTask task)}}>Delete</button>
+      </div>
+    </div>
+  {{/each}}
+
+  <button type="button" class="add-task" {{on "click" this.transitionToNewTask}}>
+    Add New Task
+  </button>
+</div>

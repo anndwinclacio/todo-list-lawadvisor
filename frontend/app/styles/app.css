@@ -1,0 +1,148 @@
+/* Ember supports plain CSS out of the box. More info: https://cli.emberjs.com/release/advanced-use/stylesheets/ */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+body {
+  font-family: Roboto, sans-serif;
+  background-color: #eeeeee;
+}
+
+/* TASK LIST */
+.task-list {
+  display: flex;
+  flex-direction: column;
+  max-height: 100vh;
+  gap: 12px;
+  width: 80%;
+
+  margin: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.task-list h1 {
+  flex-shrink: 0;
+}
+
+.task-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  cursor: grab;
+}
+
+.task-card:active {
+  cursor: grabbing;
+}
+
+.task-content {
+  flex: 0.95;
+}
+
+.task-actions {
+  display: flex;
+  gap: 5px;
+}
+
+.task-actions button {
+  min-width: 75px;
+  max-height: 30px;
+}
+
+.edit-task {
+  background-color: #04AA6D;
+  color: white;
+}
+
+.edit-task:hover {
+  background-color: #46a049;
+}
+
+.delete-task {
+  background-color: #f44336;
+  color: white;
+}
+
+.delete-task:hover {
+  background-color: #da190b;
+}
+
+button[type="submit"],
+button[type="button"].add-task {
+  background-color: #007bff;
+  color: white;
+  width: 15%;
+}
+
+/* FORM FOR CREATE AND EDIT */
+.form {
+  margin: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.form-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.field-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form label {
+  font-weight: bold;
+}
+
+.form input,
+.form textarea {
+  margin-top: 8px;
+  padding: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 16px;
+}
+
+.button-group {
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  min-width: 200px;
+}
+
+button[type="submit"]:hover,
+button[type="button"].add-task:hover {
+  background-color: #0056b3;
+}
+
+button[type="button"].cancel {
+  background-color: #ccc;
+  color: black;
+}
+
+button[type="button"].cancel:hover {
+  background-color: #999;
+}
